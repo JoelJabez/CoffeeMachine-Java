@@ -360,6 +360,12 @@ files:
         }
     }
   learner_created: false
+- name: src/machine/Coffee.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5332#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 23 Jun 2023 06:51:08 UTC"
 record: -1
