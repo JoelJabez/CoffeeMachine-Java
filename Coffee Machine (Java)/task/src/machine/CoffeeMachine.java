@@ -9,73 +9,67 @@ public class CoffeeMachine {
 	private static int amountOfCups = 9;
 	private static int cash = 550;
 
-    public static void main(String[] args) {
-	    Scanner scanner = new Scanner(System.in);
+	public static boolean start(String action) {
+		Scanner scanner = new Scanner(System.in);
 
-	    boolean isDone = false;
-	    while (!isDone) {
-		    System.out.println("\nWrite action (buy, fill, take, remaining, exit): ");
-		    String action = scanner.nextLine().toLowerCase();
+		switch (action) {
+			case "buy" -> {
+				System.out.print("What do you want to buy? ");
+				for (Coffee coffee : Coffee.values()) {
+					if (coffee.ordinal() != 0) {
+						System.out.print(", ");
+					}
+					System.out.print(coffee.ordinal() + 1 + " - " + coffee.getCoffeeName());
+				}
+				System.out.println(", back - to main menu:");
 
-		    switch (action) {
-			    case "buy" -> {
-				    System.out.print("What do you want to buy? ");
-				    for (Coffee coffee : Coffee.values()) {
-					    if (coffee.ordinal() != 0) {
-						    System.out.print(", ");
-					    }
-					    System.out.print(coffee.ordinal() + 1 + " - " + coffee.getCoffeeName());
-				    }
-				    System.out.println(", back - to main menu:");
+				String coffeeIndex = scanner.nextLine();
+				switch (coffeeIndex) {
+					case "1" -> tryToBuyCoffee(Coffee.ESPRESSO);
+					case "2" -> tryToBuyCoffee(Coffee.LATTE);
+					case "3" -> tryToBuyCoffee(Coffee.CAPPUCCINO);
 
-				    String coffeeIndex = scanner.nextLine();
-				    switch (coffeeIndex) {
-					    case "1" -> tryToBuyCoffee(Coffee.ESPRESSO);
-					    case "2" -> tryToBuyCoffee(Coffee.LATTE);
-					    case "3" -> tryToBuyCoffee(Coffee.CAPPUCCINO);
+					case "back" -> {}
 
-					    case "back" -> {}
+					default -> System.out.println("Invalid input");
+				}
+			}
 
-					    default -> {
-						    System.out.println("Invalid input");
-						    return;
-					    }
-				    }
-			    }
+			case "fill" -> {
+				System.out.println("Write how many ml of water you want to add:");
+				int addWater = scanner.nextInt();
 
-			    case "fill" -> {
-				    System.out.println("Write how many ml of water you want to add:");
-				    int addWater = scanner.nextInt();
+				System.out.println("Write how many ml of milk you want to add:");
+				int addMilk = scanner.nextInt();
 
-				    System.out.println("Write how many ml of milk you want to add:");
-				    int addMilk = scanner.nextInt();
+				System.out.println("Write how many grams of coffee beans you want to add:");
+				int addCoffeeBeans = scanner.nextInt();
 
-				    System.out.println("Write how many grams of coffee beans you want to add:");
-				    int addCoffeeBeans = scanner.nextInt();
+				System.out.println("Write how many disposable cups you want to add:");
+				int addCups = scanner.nextInt();
 
-				    System.out.println("Write how many disposable cups you want to add:");
-				    int addCups = scanner.nextInt();
+				amountOfWater += addWater;
+				amountOfMilk += addMilk;
+				amountOfCoffee += addCoffeeBeans;
+				amountOfCups += addCups;
 
-				    amountOfWater += addWater;
-				    amountOfMilk += addMilk;
-				    amountOfCoffee += addCoffeeBeans;
-				    amountOfCups += addCups;
+				scanner.nextLine();
+			}
 
-					scanner.nextLine();
-			    }
+			case "take" -> {
+				System.out.printf("I gave you $%d\n", cash);
+				System.out.println();
+				cash = 0;
+			}
 
-			    case "take" -> {
-				    System.out.printf("I gave you $%d\n", cash);
-				    System.out.println();
-				    cash = 0;
-			    }
-
-				case "remaining" -> printStatusOfCoffeeMachine();
-			    case "exit" -> isDone = true;
-			    default -> System.out.println("Invalid input");
-		    }
-	    }
-    }
+			case "remaining" -> printStatusOfCoffeeMachine();
+			case "exit" -> {
+				return true;
+			}
+			default -> System.out.println("Invalid input");
+		}
+		return false;
+	}
 
 	private static void printStatusOfCoffeeMachine() {
 		System.out.println("The coffee machine has:");

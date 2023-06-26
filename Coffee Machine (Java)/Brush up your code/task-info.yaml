@@ -276,6 +276,30 @@ files:
         }
     }
   learner_created: false
+- name: src/machine/Coffee.java
+  visible: true
+  text: "package machine;\n\npublic enum Coffee {\n\tESPRESSO(\"espresso\", 250, 0,\
+    \ 16, 4),\n\tLATTE(\"latte\", 350, 75, 20, 7),\n\tCAPPUCCINO(\"cappuccino\", 200,\
+    \ 100, 12, 6);\n\n\tprivate final String coffeeName;\n\tprivate final int amountOfWaterRequired;\n\
+    \tprivate final int amountOfMilkRequired;\n\tprivate final int amountOfCoffeeBeansRequired;\n\
+    \tprivate final int cost;\n\n\tCoffee(String coffeeName,  int amountOfWaterRequired,\
+    \ int amountOfMilkRequired,\n\t       int amountOfCoffeeBeansRequired, int cost)\
+    \ {\n\n\t\tthis.coffeeName = coffeeName;\n\t\tthis.amountOfWaterRequired = amountOfWaterRequired;\n\
+    \t\tthis.amountOfMilkRequired = amountOfMilkRequired;\n\t\tthis.amountOfCoffeeBeansRequired\
+    \ = amountOfCoffeeBeansRequired;\n\t\tthis.cost = cost;\n\t}\n\n\tpublic String\
+    \ getCoffeeName() {\n\t\treturn coffeeName;\n\t}\n\n\tpublic int getAmountOfWaterRequired()\
+    \ {\n\t\treturn amountOfWaterRequired;\n\t}\n\n\tpublic int getAmountOfMilkRequired()\
+    \ {\n\t\treturn amountOfMilkRequired;\n\t}\n\n\tpublic int getAmountOfCoffeeBeansRequired()\
+    \ {\n\t\treturn amountOfCoffeeBeansRequired;\n\t}\n\n\tpublic int getCost() {\n\
+    \t\treturn cost;\n\t}\n}\n"
+  learner_created: true
+- name: src/machine/Main.java
+  visible: true
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5334#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Mon, 26 Jun 2023 02:25:04 UTC"
 record: -1
