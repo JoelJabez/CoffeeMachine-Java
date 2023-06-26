@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/22987/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Fri, 23 Jun 2023 02:56:40 UTC"
+update_date: "Mon, 26 Jun 2023 00:58:47 UTC"
 stages:
 - id: 175
   step: 5329
@@ -19,7 +19,7 @@ stages:
   is_completed: true
 - id: 179
   step: 5333
-  is_completed: false
+  is_completed: true
 - id: 180
   step: 5334
   is_completed: false
@@ -94,7 +94,7 @@ topics:
     theory_id: 3801
   - title: IntelliJ IDEA basics
     theory_id: 5819
-  - title: EduTools
+  - title: JetBrains Academy plugin
     theory_id: 5839
   5:
   - title: Units of information

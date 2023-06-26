@@ -276,6 +276,29 @@ files:
         }
     }
   learner_created: false
+- name: src/machine/Coffee.java
+  visible: true
+  text: "package machine;\n\npublic enum Coffee {\n\tESPRESSO(\"espresso\", Counter.counter,\
+    \ 250, 0, 16, 4),\n\tLATTE(\"latte\", Counter.counter, 350, 75, 20, 7),\n\tCAPPUCCINO(\"\
+    cappuccino\", Counter.counter, 200, 100, 12, 6);\n\n\tprivate final String coffeeName;\n\
+    \tprivate final int number;\n\tprivate final int amountOfWaterRequired;\n\tprivate\
+    \ final int amountOfMilkRequired;\n\tprivate final int amountOfCoffeeBeansRequired;\n\
+    \tprivate final int cost;\n\n\tCoffee(String coffeeName, int number, int amountOfWaterRequired,\
+    \ int amountOfMilkRequired,\n\t       int amountOfCoffeeBeansRequired, int cost)\
+    \ {\n\n\t\tthis.coffeeName = coffeeName;\n\t\tthis.number = number;\n\t\tthis.amountOfWaterRequired\
+    \ = amountOfWaterRequired;\n\t\tthis.amountOfMilkRequired = amountOfMilkRequired;\n\
+    \t\tthis.amountOfCoffeeBeansRequired = amountOfCoffeeBeansRequired;\n\t\tthis.cost\
+    \ = cost;\n\n\t\tCounter.counter++;\n\t}\n\n\tpublic String getCoffeeName() {\n\
+    \t\treturn coffeeName;\n\t}\n\n\tpublic int getNumber() {\n\t\treturn number;\n\
+    \t}\n\n\tpublic int getAmountOfWaterRequired() {\n\t\treturn amountOfWaterRequired;\n\
+    \t}\n\n\tpublic int getAmountOfMilkRequired() {\n\t\treturn amountOfMilkRequired;\n\
+    \t}\n\n\tpublic int getAmountOfCoffeeBeansRequired() {\n\t\treturn amountOfCoffeeBeansRequired;\n\
+    \t}\n\n\tpublic int getCost() {\n\t\treturn cost;\n\t}\n}\n\nclass Counter {\n\
+    \tstatic int counter = 1;\n}\n"
+  learner_created: true
 feedback_link: https://hyperskill.org/learn/step/5333#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 26 Jun 2023 01:56:59 UTC"
+record: 5
